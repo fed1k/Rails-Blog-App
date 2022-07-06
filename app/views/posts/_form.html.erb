@@ -12,11 +12,6 @@
   <% end %>
 
   <div>
-    <%= form.label :users_id, style: "display: block" %>
-    <%= form.text_field :users_id %>
-  </div>
-
-  <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
@@ -27,13 +22,13 @@
   </div>
 
   <div>
-    <%= form.label :comments_id, style: "display: block" %>
-    <%= form.text_field :comments_id %>
+    <%= form.label :comments_counter, style: "display: block" %>
+    <%= form.number_field :comments_counter %>
   </div>
 
   <div>
-    <%= form.label :likes_id, style: "display: block" %>
-    <%= form.text_field :likes_id %>
+    <%= form.label :likes_counter, style: "display: block" %>
+    <%= form.number_field :likes_counter %>
   </div>
 
   <div>

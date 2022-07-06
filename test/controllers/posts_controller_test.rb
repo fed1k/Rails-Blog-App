@@ -18,8 +18,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should create post' do
     assert_difference('Post.count') do
       post posts_url,
-           params: { post: { comments_id: @post.comments_id, likes_id: @post.likes_id, text: @post.text, title: @post.title,
-                             users_id: @post.users_id } }
+           params: { post: { comments_counter: @post.comments_counter, likes_counter: @post.likes_counter, text: @post.text,
+                             title: @post.title } }
     end
 
     assert_redirected_to post_url(Post.last)
@@ -37,8 +37,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update post' do
     patch post_url(@post),
-          params: { post: { comments_id: @post.comments_id, likes_id: @post.likes_id, text: @post.text, title: @post.title,
-                            users_id: @post.users_id } }
+          params: { post: { comments_counter: @post.comments_counter, likes_counter: @post.likes_counter, text: @post.text,
+                            title: @post.title } }
     assert_redirected_to post_url(@post)
   end
 

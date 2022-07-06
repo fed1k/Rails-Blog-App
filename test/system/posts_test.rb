@@ -14,11 +14,10 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on 'New post'
 
-    fill_in 'Comments', with: @post.comments_id
-    fill_in 'Likes', with: @post.likes_id
+    fill_in 'Comments counter', with: @post.comments_counter
+    fill_in 'Likes counter', with: @post.likes_counter
     fill_in 'Text', with: @post.text
     fill_in 'Title', with: @post.title
-    fill_in 'Users', with: @post.users_id
     click_on 'Create Post'
 
     assert_text 'Post was successfully created'
@@ -29,11 +28,10 @@ class PostsTest < ApplicationSystemTestCase
     visit post_url(@post)
     click_on 'Edit this post', match: :first
 
-    fill_in 'Comments', with: @post.comments_id
-    fill_in 'Likes', with: @post.likes_id
+    fill_in 'Comments counter', with: @post.comments_counter
+    fill_in 'Likes counter', with: @post.likes_counter
     fill_in 'Text', with: @post.text
     fill_in 'Title', with: @post.title
-    fill_in 'Users', with: @post.users_id
     click_on 'Update Post'
 
     assert_text 'Post was successfully updated'

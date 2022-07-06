@@ -14,9 +14,7 @@ class CommentsTest < ApplicationSystemTestCase
     visit comments_url
     click_on 'New comment'
 
-    fill_in 'Posts', with: @comment.posts_id
     fill_in 'Text', with: @comment.text
-    fill_in 'Users', with: @comment.users_id
     click_on 'Create Comment'
 
     assert_text 'Comment was successfully created'
@@ -27,9 +25,7 @@ class CommentsTest < ApplicationSystemTestCase
     visit comment_url(@comment)
     click_on 'Edit this comment', match: :first
 
-    fill_in 'Posts', with: @comment.posts_id
     fill_in 'Text', with: @comment.text
-    fill_in 'Users', with: @comment.users_id
     click_on 'Update Comment'
 
     assert_text 'Comment was successfully updated'
