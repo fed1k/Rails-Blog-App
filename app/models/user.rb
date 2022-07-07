@@ -14,4 +14,8 @@ class User < ApplicationRecord
   Comment.create(post: first_post, author: first_user, text: 'I need some help')
   Comment.create(post: first_post, author: first_user, text: 'I really appreciate it')
   Comment.create(post: first_post, author: first_user, text: 'Thanks bro')
+
+  def three_recent_posts
+    Post.all.order(created_at: :desc).limit(3)
+  end
 end
