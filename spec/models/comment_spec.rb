@@ -18,4 +18,9 @@ RSpec.describe Comment, type: :model do
     subject.post_id = nil
     expect(subject).to_not be_valid
   end
+
+  it 'author should be correct person' do
+    subject.author_id = user.id
+    expect(subject).to be_truthy
+  end
 end
