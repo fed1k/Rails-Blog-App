@@ -18,6 +18,9 @@ Then you can clone the project by typing git clone https://github.com/RaoAkif/Ra
 Type bundle install in the root file of the project.
 Type rails s in the root file of the project.
 
+## Run Tests
+Run `bundle install` and `rspec`
+
 ## Authors
  * Github: [@fed1k](https://github.com/fed1k)
  * LinkedIn: [@fed1k](https://www.linkedin.com/in/firdavs-allamurotov/)
