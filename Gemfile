@@ -46,6 +46,8 @@ gem 'rspec-rails'
 
 gem 'ffi'
 
+gem 'rails-controller-testing'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
