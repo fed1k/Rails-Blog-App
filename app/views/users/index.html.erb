@@ -1,1 +1,7 @@
-<h1>List of Users</h1>
+<% @user.each do |i|%>
+ <div style="display: flex; border: 1px solid black;">
+   <%= image_tag(i.photo) %>
+   <h1><%= i.name %></h1>
+   <span style="align-self: flex-end">Number of posts:<%= i.posts_counter ? i.posts_counter : '0' %></span>
+ </div>
+<% end %>

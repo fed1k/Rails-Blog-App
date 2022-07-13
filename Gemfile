@@ -44,6 +44,8 @@ gem 'bootsnap', require: false
 
 gem 'rspec-rails'
 
+gem 'image_processing'
+
 gem 'rails-controller-testing'
 
 gem 'ffi'
