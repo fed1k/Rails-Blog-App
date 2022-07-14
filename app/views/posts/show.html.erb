@@ -1,9 +1,16 @@
 <a href="/users/<%= params[:user_id]%>/posts">Back</a>
 <div style="display: flex; flex-direction: column; gap: 5px;">
   <div style="border: 1px solid black;">
-    <h2><%= %></h2>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2>Post #<%=params[:id] %> by <%=@user.name %></h2>
+      <span>Comments: <%=@comments.length%>, Likes: 0<%=%></span>
+    </div>
+    <p><%=@post.text%></p>
   </div>
   
   <div style="border: 1px solid black;">
+    <%@comments.each do |i| %>
+      <h5><%=@post.id == 2 ? @user.name : 'N/A'%>: <%=@post.id == 2 ? i.text : 'N/A'%></h5>
+    <%end%>
   </div>
 </div>
