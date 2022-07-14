@@ -1,1 +1,7 @@
-<h1>List of Users</h1>
+<% @users.each do |i|%>
+ <div style="display: flex; border: 1px solid black;">
+   <%= image_tag(i.photo) %>
+   <a href="/users/<%= i.id %>"><%= i.name %></a>
+   <span style="align-self: flex-end">Number of posts:<%= @posts %></span>
+ </div>
+<% end %>
