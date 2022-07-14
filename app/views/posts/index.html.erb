@@ -1,1 +1,23 @@
-<h1>Posts for a User</h1>
+<a href="/users/<%= params[:user_id]%>">Back</a>
+<div style="display: flex; flex-direction: column; gap: 25px;">
+  <div style="border: 1px solid black">
+    <h1><%= @user.name%></h1>
+    <p>Number of posts: <%= @posts.where(author_id: 8).length%></p>
+  </div>
+  <% @posts.each do |i| %>
+    <div style="display: flex; flex-direction:column; gap: 4px;">
+      <div style="border: 1px solid black">
+        <a href="/users/<%= params[:user_id]%>/posts/<%=i.id - 1%>">Post #<%= i.id - 1 %></a>
+        <p><%= i.text%></p>
+        <span>Comments: <%= i.id == 2 && @comments.where(post_id: i.id) ? @comments.length : 0%>, Likes: 0<%=%></span>
+      </div>
+      <div style="border: 1px solid black">
+        <%@comments.each do |j| %>
+          <div>
+            <h4><%= @user.name%>: <%= i.id == 2 ? j.text : 'N/A'%></h4>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  <% end %>
+</div>
