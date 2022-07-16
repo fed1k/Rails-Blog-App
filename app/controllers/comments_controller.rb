@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def show
     redirect_to user_posts_path(current_user)
   end
-  
+
   def new
     @comment = Comment.new
   end
