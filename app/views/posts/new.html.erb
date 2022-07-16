@@ -1,0 +1,9 @@
+<div>
+  <%= form_with model: @post, url: user_posts_path do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+    <%= f.submit "Create Post" %>
+  <% end %>
+</div>
