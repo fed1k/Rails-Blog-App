@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   # get "/users/:user_id/posts/:id" => "posts#show", as: :user_post
   resources :users do
     resources :posts
+    resources :comments
   end
 end
