@@ -1,7 +1,7 @@
 <% @users.each do |i|%>
  <div style="display: flex; border: 1px solid black;">
-   <%= image_tag(i.photo) %>
+   <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,landscape" id="profile-avatar" style="width: 10vw; height: 25vh;" alt="random image">
    <a href="/users/<%= i.id %>"><%= i.name %></a>
-   <span style="align-self: flex-end">Number of posts:<%= @posts %></span>
+   <span style="align-self: flex-end">Number of posts:<%= i.posts.count %></span>
  </div>
 <% end %>
