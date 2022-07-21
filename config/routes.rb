@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :members
   # resources :comments
   # resources :posts
   # resources :likes
