@@ -12,7 +12,6 @@ To get a local copy up and running follow these simple example steps
 ## Install
 In order to run, you need to install RUBY and Rails in your computer. For windows you can go to Ruby installer and for MAC and LINUX you can go to Ruby official site for intructions on how to intall it.
 
-Then you can clone the project by typing git clone https://github.com/RaoAkif/RailsBlog
 
 ## Run app
 Type bundle install in the root file of the project.
@@ -22,9 +21,10 @@ Type rails s in the root file of the project.
 Run `bundle install` and `rspec`
 
 ## Authors
+
  * Github: [@fed1k](https://github.com/fed1k)
  * LinkedIn: [@fed1k](https://www.linkedin.com/in/firdavs-allamurotov/)
-
+  ## Have Samuel
  * Github: [@Have](https://github.com/Have-Samuel)
  * LinkedIn: [@Have](https://www.linkedin.com/in/have-samuel/)
 
