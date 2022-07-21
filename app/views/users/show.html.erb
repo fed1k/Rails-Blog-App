@@ -11,7 +11,7 @@
   </div>
   <%@user.posts.each do |i| %>
     <div style="border: 1px solid black">
-      <h3>Post #<%=i.id - 1%></h3>
+      <a href=<%= "/users/#{@user.id}/posts/#{i.id}"%>>Post #<%=i.id %></a>
       <p><%=i.text%></p>
       <p>Comments: <%=i.id == 2 ? @comments.length : 0 %></p>
       <p>Likes: <%=i.id == 2 ? @likes.length : 0 %></p>

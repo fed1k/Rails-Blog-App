@@ -2,12 +2,13 @@
 <div style="display: flex; flex-direction: column; gap: 25px;">
   <div style="border: 1px solid black">
     <h1><%= @user.name %></h1>
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,landscape" id="profile-avatar" style="width: 10vw; height: 25vh;" alt="random image">
     <p>Number of posts: <%= @posts.count%></p>
   </div>
   <% @posts.each do |i| %>
     <div style="display: flex; flex-direction:column; gap: 4px;">
       <div style="border: 1px solid black">
-        <a href="/users/<%= params[:user_id]%>/posts/<%=i.id%>">Post #<%= i.id %></a>
+        <a href="/users/<%= params[:user_id]%>/posts/<%=i.id%>">Post #<%= i.id %>: <%= i.title%></a>
         <p><%= i.text%></p>
         <span>Comments: <%= i.id == 2 && @comments.where(post_id: i.id) ? @comments.length : 0%>, Likes: 0<%=%></span>
       </div>
