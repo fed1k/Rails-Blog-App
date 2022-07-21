@@ -25,6 +25,9 @@ Run `bundle install` and `rspec`
  * Github: [@fed1k](https://github.com/fed1k)
  * LinkedIn: [@fed1k](https://www.linkedin.com/in/firdavs-allamurotov/)
 
+ * Github: [@Have](https://github.com/Have-Samuel)
+ * LinkedIn: [@Have](https://www.linkedin.com/in/have-samuel/)
+
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
 

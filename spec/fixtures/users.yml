@@ -1,0 +1,8 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 8
+  name: Tom
+  photo: https://unsplash.com/photos/F_-0BxGuVvo
+  bio: Teacher from Mexico
+  posts_counter: 8

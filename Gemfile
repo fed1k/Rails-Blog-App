@@ -40,7 +40,7 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', require: false
+gem 'bootsnap', require: true
 
 gem 'rspec-rails'
 
@@ -69,7 +69,7 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'spring'
 end
 
 group :test do
@@ -78,3 +78,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'bullet'
