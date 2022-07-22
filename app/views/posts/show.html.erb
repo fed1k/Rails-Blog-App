@@ -6,6 +6,7 @@
       <span>Comments: <%=@comments.length%>, Likes: 0<%=%></span>
     </div>
     <p><%=@post.text%></p>
+    <button><%= button_to "Delete", user_post_path(@user, @post), method: :delete, remote: true %></button>
   </div>
   
   <div style="border: 1px solid black;">
