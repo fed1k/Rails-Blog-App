@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    current_user = User.find_by_id(session[:current_user_id])
     @post = Post.new(post_params)
     @post.author_id = current_user.id
     @post.comments_counter = 0
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
       render action: 'new'
     end
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     @comment = @post.comments.destroy_all

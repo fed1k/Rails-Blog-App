@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -11,21 +9,21 @@ class Ability
     #   return unless user.admin?
     #   can :manage, :all
     user ||= User.new
-      # Define abilities for the user here. For example:
-      #
-      #   return unless user.present?
-      #   can :read, :all
-      #   return unless user.admin?
-      #   can :manage, :all
-      if user.is? :admin
-        can :manage, :all
-      else
-        can :manage, Post, user_id: user.id
-        can :manage, Comment, user_id: user.id
-        can :read, :all
-        can :add, Comment
-        can :add, Like
-      end
+    # Define abilities for the user here. For example:
+    #
+    #   return unless user.present?
+    #   can :read, :all
+    #   return unless user.admin?
+    #   can :manage, :all
+    if user.role == 'admin'
+      can :manage, :all
+    else
+      can :manage, Post, user_id: user.id
+      can :manage, Comment, user_id: user.id
+      can :read, :all
+      can :add, Comment
+      can :add, Like
+    end
 
     #
     # The first argument to `can` is the action you are giving the user

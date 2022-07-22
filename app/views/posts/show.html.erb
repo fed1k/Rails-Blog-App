@@ -13,7 +13,7 @@
   <div style="border: 1px solid black;">
     <% @post.comments.each do |i| %>
       <h5><%= User.find(params[:user_id]).name %>: <%=i.text %></h5>
-      <%= button_to "Delete", user_post_comment_path(@user, @post, i), method: :delete, remote: true %>
+      <% if can? :update, @post %><%= button_to "Delete", user_post_comment_path(@user, @post, i), method: :delete, remote: true %> | <%end%>
     <% end %>
   </div>
 </div>
