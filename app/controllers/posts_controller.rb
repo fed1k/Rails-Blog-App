@@ -27,6 +27,14 @@ class PostsController < ApplicationController
       render action: 'new'
     end
   end
+  
+  def destroy
+    @post = Post.find(params[:id])
+    @comment = @post.comments.destroy_all
+    @like = @post.likes.destroy_all
+    @post.destroy
+    redirect_to user_posts_path(8)
+  end
 
   private
 
