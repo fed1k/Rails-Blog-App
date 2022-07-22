@@ -1,5 +1,5 @@
 <div>
-  <%= form_with model: @comment, url: user_comments_path do |f| %>
+  <%= form_with model: @comment, url: user_post_comments_path(@user, @post) do |f| %>
     <%= f.label :text %>
     <%= f.text_field :text %>
     <%= f.submit "Create Comment" %>

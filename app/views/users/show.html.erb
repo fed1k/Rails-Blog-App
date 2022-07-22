@@ -13,8 +13,8 @@
     <div style="border: 1px solid black">
       <a href=<%= "/users/#{@user.id}/posts/#{i.id}"%>>Post #<%=i.id %></a>
       <p><%=i.text%></p>
-      <p>Comments: <%=i.id == 2 ? @comments.length : 0 %></p>
-      <p>Likes: <%=i.id == 2 ? @likes.length : 0 %></p>
+      <p>Comments: <%=i.comments.count %></p>
+      <p>Likes: <%=i.likes.count %></p>
     </div>
   <% end %>
   <a href="/users/<%= params[:id]%>/posts" style="padding: 2px 10px; border: 2px solid black; align-self: center; color: black; text-decoration: none; font-size: 18px;">See all posts</a>
