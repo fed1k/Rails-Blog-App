@@ -54,10 +54,9 @@ gem 'rails-controller-testing'
 
 gem 'ffi'
 
-gem 'bcrypt', "~> 3.1.7"
-gem 'rack-cors'
+gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
-
+gem 'rack-cors'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
