@@ -10,12 +10,12 @@
       <div style="border: 1px solid black">
         <a href="/users/<%= params[:user_id]%>/posts/<%=i.id%>">Post #<%= i.id %>: <%= i.title%></a>
         <p><%= i.text%></p>
-        <span>Comments: <%= i.id == 2 && @comments.where(post_id: i.id) ? @comments.length : 0%>, Likes: 0<%=%></span>
+        <span>Comments: <%= i.comments.count %>, Likes: 0<%=%></span>
       </div>
       <div style="border: 1px solid black">
-        <%@comments.each do |j| %>
+        <%i.comments.each do |j| %>
           <div>
-            <h4><%= i.id == 2 ? @user.name : 'N/A'%>: <%= i.id == 2 ? j.text : 'N/A'%></h4>
+            <h4><%= User.find(params[:user_id]).name %>: <%= j.text %></h4>
           </div>
         <%end%>
       </div>

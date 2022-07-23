@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes([:comments])
     @comments = Comment.all
   end
 
@@ -26,6 +27,14 @@ class PostsController < ApplicationController
     else
       render action: 'new'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @comment = @post.comments.destroy_all
+    @like = @post.likes.destroy_all
+    @post.destroy
+    redirect_to user_posts_path(8)
   end
 
   private
