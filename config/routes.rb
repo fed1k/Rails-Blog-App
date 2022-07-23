@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :members
   # resources :comments
   # resources :posts
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "users#index"
+
+  post '/login', to: 'auth#login', default: {:format => :json}
   # get "/users/:user_id/posts/new" => "posts#new", as: :new
   # post "/users/:user_id/posts" => "posts#create", as: :create_post
   # get "/users" => "users#index", as: :users
@@ -18,6 +21,14 @@ Rails.application.routes.draw do
   resources :users do
     resources :posts do
       resources :comments
+    end
+  end
+
+  scope 'api' do
+    get '/posts/:id/comments' => 'api/comments#index', as: :api_post_comments
+    post '/posts/:id/comments' => 'api/comments#create', as: :api_post_comments_create
+    resources :users, only: [] do
+      get '/posts' => 'api/posts#index', as: :api_user_posts
     end
   end
 end
